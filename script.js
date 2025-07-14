@@ -30,6 +30,7 @@ function displayBooks() {
         const bookPageCount = document.createElement("p");
         const bookIsRead = document.createElement("p");
         const deleteButton = document.createElement("button");
+        const changeReadStatusButton = document.createElement("button");
 
         bookTitle.innerText = book.title;
         bookAuthor.innerText = book.author;
@@ -37,12 +38,15 @@ function displayBooks() {
         bookIsRead.innerText = book.isRead ? "read" : "not yet read";
         deleteButton.setAttribute("class", "delete-btn");
         deleteButton.innerText = "Delete Book";
+        changeReadStatusButton.setAttribute("class", "change-btn");
+        changeReadStatusButton.innerText = "Change Read Status";
 
         bookCard.appendChild(bookTitle);
         bookCard.appendChild(bookAuthor);
         bookCard.appendChild(bookPageCount);
         bookCard.appendChild(bookIsRead);
         bookCard.appendChild(deleteButton);
+        bookCard.appendChild(changeReadStatusButton);
 
         bookCard.classList.add("card");
         bookCard.setAttribute("data-id", book.id);
@@ -87,3 +91,25 @@ container.addEventListener("click", function(event) {
         }
     }
 })
+
+Book.prototype.changeReadStatus = function() {
+    if (this.isRead) {
+        this.isRead = false;
+    } else {
+        this.isRead = true;
+    }
+}
+
+container.addEventListener("click", function(event) {
+    if (event.target.matches("button.change-btn")) {
+        const card = event.target.closest(".card");
+        const bookId = card.dataset.id;
+
+        const index = library.findIndex(book => book.id === bookId);
+        if (index !== -1) {
+            library[index].changeReadStatus();
+            displayBooks();
+        }
+    }
+})
+
