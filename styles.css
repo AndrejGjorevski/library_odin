@@ -1,0 +1,10 @@
+#container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    border: 1px solid black;
+    box-shadow: 2px 4px 1px rgba(147, 112, 216, 0.425);
+}
