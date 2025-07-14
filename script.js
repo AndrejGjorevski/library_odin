@@ -78,6 +78,12 @@ submitButton.addEventListener("click", function (event) {
     displayBooks();
 })
 
+const closeButton = document.getElementById("close-btn");
+closeButton.addEventListener("click", function() {
+    const modalDialog = document.getElementById("dialog");
+    modalDialog.close();
+})
+
 const container = document.getElementById("container");
 container.addEventListener("click", function(event) {
     if (event.target.matches("button.delete-btn")) {

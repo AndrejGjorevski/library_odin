@@ -1,10 +1,86 @@
+body {
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+}
+
+#addBook,
+.change-btn,
+.delete-btn {
+    background-color: rgb(85, 85, 230);
+    color: white;
+    border-radius: 15px;
+    border: 0;
+    width: 120px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+header {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    box-shadow: 2px 4px 1px rgba(147, 112, 216, 0.425);
+    border-radius: 8px;
+    grid-row: 1 / 2;
+}
+
 #container {
+    width: 100vw;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
+    margin-top: 20px;
+    grid-row: 2 / 4;
 }
 
 .card {
-    border: 1px solid black;
-    box-shadow: 2px 4px 1px rgba(147, 112, 216, 0.425);
+    box-shadow: 0px 2px 4px 1px rgba(147, 112, 216, 0.425);
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    padding-left: 20px;
+}
+
+#dialog form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: auto;
+}
+
+#dialog form div {
+    display: flex;
+    align-items: center;
+}
+
+#read {
+    margin-right: 5px;
+}
+
+#dialog form input[type="text"],
+input[type="radio"],
+input[type="number"] {
+    height: 25px;
+}
+
+#dialog form button,
+input[type="button"] {
+    background-color: rgb(85, 85, 230);
+    color: white;
+    border-radius: 15px;
+    border: 0;
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    align-self: center;
+    margin-bottom: 5px;
+}
+
+#dialog {
+    border: 0;
 }

@@ -9,8 +9,11 @@
 </head>
 
 <body>
-    <h1>Books</h1>
-    <input type="button" id="addBook" value="Add Book">
+    <header>
+        <h1>Library</h1>
+        <input type="button" id="addBook" value="Add Book">
+    </header>
+
     <div id="input-container">
         <dialog id="dialog">
             <form>
@@ -23,13 +26,17 @@
                 <label for="pageCount">Page Count</label>
                 <input type="number" id="pageCount">
 
-                <label>Read?</label>
-                <label for="read-true">True</label>
-                <input type="radio" name="isRead" id="read-true" value="true">
-                <label for="read-false">False</label>
-                <input type="radio" name="isRead" id="read-false" value="false">
+                <div>
+                    <label id="read">Read?</label>
+                    <label for="read-true">True</label>
+                    <input type="radio" name="isRead" id="read-true" value="true">
+                    <label for="read-false">False</label>
+                    <input type="radio" name="isRead" id="read-false" value="false">
+                </div>
+
 
                 <button value="submit" id="btn">Add</button>
+                <input type="button" id="close-btn" value="Close">
             </form>
         </dialog>
     </div>
