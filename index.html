@@ -10,23 +10,28 @@
 
 <body>
     <h1>Books</h1>
+    <input type="button" id="addBook" value="Add Book">
     <div id="input-container">
-        <label for="title">Title</label>
-        <input type="text" id="title">
+        <dialog id="dialog">
+            <form>
+                <label for="title">Title</label>
+                <input type="text" id="title">
 
-        <label for="author">Author</label>
-        <input type="text" id="author">
+                <label for="author">Author</label>
+                <input type="text" id="author">
 
-        <label for="pageCount">Page Count</label>
-        <input type="number" id="pageCount">
+                <label for="pageCount">Page Count</label>
+                <input type="number" id="pageCount">
 
-        <label>Read?</label>
-        <label for="true">True</label>
-        <input type="radio" name="isRead" id="true" value="True">
-        <label for="false">False</label>
-        <input type="radio" name="isRead" id="false" value="False">
+                <label>Read?</label>
+                <label for="read-true">True</label>
+                <input type="radio" name="isRead" id="read-true" value="true">
+                <label for="read-false">False</label>
+                <input type="radio" name="isRead" id="read-false" value="false">
 
-        <button value="submit" id="btn">Add Book</button>
+                <button value="submit" id="btn">Add</button>
+            </form>
+        </dialog>
     </div>
     <div id="container">
 
