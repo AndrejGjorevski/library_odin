@@ -1,15 +1,15 @@
 const library = [];
 
-function Book(title, author, pageCount, isRead) {
-    if (!new.target) {
-        throw Error("You must use 'new' operator to instantiate this object")
+class Book {
+    constructor(title, author, pageCount, isRead) {
+        this.id = crypto.randomUUID();
+        this.title = title;
+        this.author = author;
+        this.pageCount = pageCount;
+        this.isRead = isRead;
     }
-    this.id = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.pageCount = pageCount;
-    this.isRead = isRead;
-    this.info = function () {
+
+    info() {
         let returnString = this.id + " " + this.title + " " + this.author + " " + this.pageCount + " " + (this.isRead ? "read" : "not read yet");
         return returnString;
     }
